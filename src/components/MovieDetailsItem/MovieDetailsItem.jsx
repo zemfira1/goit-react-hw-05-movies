@@ -4,10 +4,10 @@ export const MovieDetailsItem = ({ movieDetails }) => {
   console.log(movieDetails);
   console.log(genres);
   console.log(poster_path);
-
+  const BASE_URL = 'http://image.tmdb.org/t/p/w500/';
   return (
     <div>
-      <img src="http://image.tmdb.org/t/p/w500" alt={title} />
+      <img src={BASE_URL + poster_path} alt={title} />
       <h2>{title}</h2>
       <p>Use Score: {Number(vote_average) * 10} %</p>
       <p>Overview</p>
