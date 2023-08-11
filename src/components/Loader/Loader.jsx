@@ -15,6 +15,7 @@ export const Loader = () => {
     />
   );
 };
+
 Loader.propTypes = {
   height: PropTypes.string,
   width: PropTypes.string,

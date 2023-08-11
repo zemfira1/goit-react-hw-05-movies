@@ -1,16 +1,33 @@
-//import { Link } from 'react-router-dom';
-import { HomeList } from './Home.styled';
+import { useEffect, useState } from 'react';
+import { getTrendingMovies } from '../../servises/api';
+import { ListOfMovies } from 'components/ListOfMovies';
+import { Loader } from 'components/Loader';
 
 export const Home = () => {
+  const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const getTrendingMoviesData = async () => {
+      try {
+        setIsLoading(true);
+        setMovies(await getTrendingMovies());
+      } catch (error) {
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    getTrendingMoviesData();
+  }, []);
+
   return (
-    <HomeList>
-      {/* {['movie-1', 'movie-2', 'movie-3', 'movie-4', 'movie-5'].map(movie => {
-        return (
-          <Link key={movie} to={`${movie}`}>
-            {movie}
-          </Link>
-        );
-      })} */}
-    </HomeList>
+    <>
+      {isLoading && <Loader />}
+      {movies.length !== 0 && <ListOfMovies movies={movies} />}
+      {error && alert('Sorry, something is wrong!')}
+    </>
   );
 };
