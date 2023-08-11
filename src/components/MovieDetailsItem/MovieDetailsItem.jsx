@@ -7,7 +7,7 @@ export const MovieDetailsItem = ({ movieDetails }) => {
 
   return (
     <div>
-      <img src="http://image.tmdb.org/t/p/w500${poster_path}" alt={title} />
+      <img src="http://image.tmdb.org/t/p/w500" alt={title} />
       <h2>{title}</h2>
       <p>Use Score: {Number(vote_average) * 10} %</p>
       <p>Overview</p>
