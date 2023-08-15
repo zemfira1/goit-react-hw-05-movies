@@ -7,13 +7,9 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-  display: flex;
-  align-items: center;
   font-size: 34px;
   color: #010101;
-  background-color: #f0e68c;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  background-color: #f3f6af;
 `;
 
 export const Navigation = styled.nav`
@@ -25,7 +21,7 @@ export const Navigation = styled.nav`
 
 export const NavLinkEl = styled(NavLink)`
   color: inherit;
-  transition: color, 250ms;
+  transition: color, 200ms;
 
   &.active {
     color: #de0b74;
@@ -33,7 +29,15 @@ export const NavLinkEl = styled(NavLink)`
 `;
 
 export const Main = styled.main`
-  background-color: #ffffe0;
-  height: 100vh;
+  height: 100%;
   padding: 20px;
+`;
+
+export const Line = styled.div`
+  height: 1px;
+  width: 100%;
+  border: none;
+  background-color: gray;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.8),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.8);
 `;

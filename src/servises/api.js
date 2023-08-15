@@ -20,23 +20,23 @@ export const getMovieDetails = async movieId => {
   return data;
 };
 
-export const SearchMovie = async (query, page) => {
+export const getSearchMovie = async query => {
   const { data } = await axios.get(
-    `${query}/movie?include_adult=false&language=en-US&page=${page}`
+    `${query}/movie?include_adult=false&language=en-US&page=1}`
   );
 
   return data.results;
 };
 
-export const getCredits = async movieId => {
+export const getCast = async movieId => {
   const { data } = await axios.get(`movie/${movieId}/credits?language=en-US`);
 
   return data.cast;
 };
 
-export const getReviews = async (movieId, page) => {
+export const getReviews = async movieId => {
   const { data } = await axios.get(
-    `movie/${movieId}/reviews?language=en-US&page=${page}`
+    `movie/${movieId}/reviews?language=en-US&page=1`
   );
 
   return data.results;

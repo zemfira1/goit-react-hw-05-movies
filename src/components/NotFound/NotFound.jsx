@@ -1,3 +1,5 @@
+import { Anything } from './NotFound.styled';
+
 export const NotFound = () => {
-  return <div>NotFound</div>;
+  return <Anything>Nothing found at this address.</Anything>;
 };

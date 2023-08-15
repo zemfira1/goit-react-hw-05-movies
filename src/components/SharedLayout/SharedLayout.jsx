@@ -5,6 +5,7 @@ import {
   NavLinkEl,
   Navigation,
   Container,
+  Line,
 } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
@@ -18,6 +19,7 @@ export const SharedLayout = () => {
           </Navigation>
         </Container>
       </Header>
+      <Line></Line>
       <Main>
         <Container>
           <Outlet />
