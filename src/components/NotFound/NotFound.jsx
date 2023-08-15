@@ -1,5 +1,7 @@
 import { Anything } from './NotFound.styled';
 
-export const NotFound = () => {
+const NotFound = () => {
   return <Anything>Nothing found at this address.</Anything>;
 };
+
+export default NotFound;

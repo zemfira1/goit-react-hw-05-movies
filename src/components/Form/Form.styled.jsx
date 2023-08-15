@@ -4,10 +4,11 @@ export const Form = styled.form`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 24px;
   width: 100%;
   height: 36px;
   max-width: 600px;
-  background-color: #fff;
+  background-color: inherit;
   border-radius: 3px;
   overflow: hidden;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.4),
@@ -45,7 +46,7 @@ export const Input = styled.input`
   width: 90%;
   height: 100%;
   vertical-align: middle;
-  background-color: white;
+  background-color: inherit;
   padding-left: 12px;
   font-size: 20px;
 `;

@@ -2,19 +2,24 @@ import { FormEl } from 'components/Form/Form';
 import { ListOfMovies } from 'components/ListOfMovies';
 import { Loader } from 'components/Loader';
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { getSearchMovie } from 'servises/api';
 
-export const Movies = () => {
+const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchMovies, setSearchMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
+  const location = useLocation();
 
   const formSubmit = data => {
     if (data.query === query) {
       alert('This request is already active!');
       return;
+    }
+
+    if (data.query === '') {
+      return setSearchParams({});
     }
 
     setSearchParams({ query: data.query });
@@ -34,7 +39,6 @@ export const Movies = () => {
           movie.title.toLowerCase().includes(normalizedQuery)
         );
         setSearchMovies(filteredMovies);
-        console.log(filteredMovies);
       } catch (error) {
         setError(error);
       } finally {
@@ -50,9 +54,11 @@ export const Movies = () => {
       <FormEl onSubmit={formSubmit} />
       {isLoading && <Loader />}
       {Array.isArray(searchMovies) && searchMovies.length !== 0 && (
-        <ListOfMovies movies={searchMovies} />
+        <ListOfMovies movies={searchMovies} location={location} />
       )}
       {error && alert('Sorry, something is wrong!')}
     </>
   );
 };
+
+export default Movies;

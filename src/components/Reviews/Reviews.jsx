@@ -5,7 +5,7 @@ import { getReviews } from 'servises/api';
 import { ReviewsList } from './ReviewsList';
 import { NoReviews } from './NoReviews';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -36,3 +36,5 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews;

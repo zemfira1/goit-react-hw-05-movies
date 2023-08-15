@@ -1,2 +1,2 @@
-import { Reviews } from './Reviews.jsx';
-export { Reviews };
+import Reviews from './Reviews.jsx';
+export default Reviews;

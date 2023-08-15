@@ -30,7 +30,8 @@ export const FormEl = ({ onSubmit }) => {
         type="text"
         autoComplete="off"
         autoFocus
-        required
+        placeholder="Enter a query..."
+        //required
       />
       <Button type="submit">
         <IoEasel />

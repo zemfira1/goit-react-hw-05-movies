@@ -1,2 +1,2 @@
-import { Movies } from './Movies.jsx';
-export { Movies };
+import Movies from './Movies.jsx';
+export default Movies;

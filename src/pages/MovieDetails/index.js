@@ -1,2 +1,2 @@
-import { MovieDetails } from './MovieDetails.jsx';
-export { MovieDetails };
+import  MovieDetails  from './MovieDetails.jsx';
+export default MovieDetails;

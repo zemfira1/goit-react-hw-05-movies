@@ -4,9 +4,6 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 axios.defaults.headers.common['Authorization'] =
   'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NzhhYjBlYjNmYjE0YzA0ODc2YzI1YmIxNDI0M2NiZCIsInN1YiI6IjY0ZDE2MzYyNmQ0Yzk3MDBlYzU4YjNlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wkZrfHNayLG0He9kinamYKtKq9Py8-TCiR3q_k01mNs';
 axios.defaults.headers.common['accept'] = 'application/json';
-axios.defaults.params = {
-  language: 'en-US',
-};
 
 export const getTrendingMovies = async () => {
   const { data } = await axios.get('trending/all/day');
@@ -22,7 +19,7 @@ export const getMovieDetails = async movieId => {
 
 export const getSearchMovie = async query => {
   const { data } = await axios.get(
-    `${query}/movie?include_adult=false&language=en-US&page=1}`
+    `/search/movie?query=${query}&include_adult=false&language=en-US&page=1}`
   );
 
   return data.results;

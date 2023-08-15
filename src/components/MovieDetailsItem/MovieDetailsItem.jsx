@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 import {
   MovieContainer,
   MovieInfo,
@@ -58,7 +59,9 @@ export const MovieDetailsItem = ({ movieDetails }) => {
         </AddInfoList>
       </AddInfoContainer>
       <Line></Line>
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </PageContainer>
   );
 };
