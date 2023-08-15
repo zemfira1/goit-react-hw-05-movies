@@ -2,7 +2,7 @@ import { Button } from 'components/Button';
 import { Loader } from 'components/Loader';
 import { MovieDetailsItem } from 'components/MovieDetailsItem';
 import { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getMovieDetails } from 'servises/api';
 
 export const MovieDetails = () => {
@@ -10,7 +10,7 @@ export const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const location = useLocation();
+  //const location = useLocation();
   //console.log(location);
 
   useEffect(() => {
