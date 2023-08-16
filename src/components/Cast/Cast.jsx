@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getCast } from 'servises/api';
 import { CastList } from './CastList';
+import { NoCast } from './NoCast';
 
 export const Cast = () => {
   const { movieId } = useParams();
@@ -30,7 +31,7 @@ export const Cast = () => {
   return (
     <>
       {isLoading && <Loader />}
-      {cast !== [] && <CastList cast={cast} />}
+      {cast.length !== 0 ? <CastList cast={cast} /> : <NoCast />}
       {error && alert('Sorry, something is wrong!')}
     </>
   );

@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Item, List } from './ListOfMovies.styled';
 import PropTypes from 'prop-types';
 
-export const ListOfMovies = ({ movies, location }) => {
+export const ListOfMovies = ({ movies }) => {
+  const location = useLocation();
+
   return (
     <List>
       {movies.map(({ id, title }) => (

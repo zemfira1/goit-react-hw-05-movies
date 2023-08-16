@@ -31,7 +31,7 @@ const Reviews = () => {
   return (
     <>
       {isLoading && <Loader />}
-      {reviews !== [] ? <ReviewsList reviews={reviews} /> : <NoReviews />}
+      {reviews.length > 0 ? <ReviewsList reviews={reviews} /> : <NoReviews />}
       {error && alert('Sorry, something is wrong!')}
     </>
   );
