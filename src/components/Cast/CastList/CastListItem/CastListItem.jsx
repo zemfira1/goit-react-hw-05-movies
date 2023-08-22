@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
 import { ActorData, Image, Item, Name } from './CastListItem.styled';
+import man from '../../../../images/man.jpg';
+import woman from '../../../../images/woman.jpg';
 
-export const CastListItem = ({ name, character, profile_path }) => {
+export const CastListItem = ({ name, character, profile_path, gender }) => {
   const BASE_URL = 'http://image.tmdb.org/t/p/w185/';
-  const defaultImg =
-    'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
   return (
     <Item>
       <Image
-        src={profile_path ? BASE_URL + profile_path : defaultImg}
+        src={
+          profile_path ? BASE_URL + profile_path : gender === 1 ? woman : man
+        }
         alt={name}
       />
       <ActorData>
