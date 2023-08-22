@@ -6,7 +6,7 @@ axios.defaults.headers.common['Authorization'] =
 axios.defaults.headers.common['accept'] = 'application/json';
 
 export const getTrendingMovies = async () => {
-  const { data } = await axios.get('trending/all/day');
+  const { data } = await axios.get('trending/movie/day');
 
   return data.results;
 };

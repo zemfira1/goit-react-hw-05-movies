@@ -28,7 +28,12 @@ export const Item = styled.li`
 
 export const Image = styled.img`
   width: 100%;
-  height: 302px;
+  height: 390px;
   margin-bottom: 8px;
   z-index: 9999;
+`;
+
+export const Title = styled.p`
+  font-size: 20px;
+  text-align: center;
 `;
