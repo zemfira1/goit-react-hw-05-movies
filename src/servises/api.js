@@ -6,10 +6,9 @@ axios.defaults.headers.common['Authorization'] =
 axios.defaults.headers.common['accept'] = 'application/json';
 
 export const getTrendingMovies = async page => {
-  const { data } = await axios.get('trending/movie/week', {
+  const { data } = await axios.get('trending/movie/day', {
     params: {
       page: page,
-      per_page: 20,
     },
   });
 
@@ -23,9 +22,14 @@ export const getMovieDetails = async movieId => {
 };
 
 export const getSearchMovie = async query => {
-  const { data } = await axios.get(
-    `/search/movie?query=${query}&include_adult=false&language=en-US&page=1}`
-  );
+  const { data } = await axios.get(`/search/movie`, {
+    params: {
+      query: query,
+      include_adult: false,
+      language: 'en-US',
+      page: 1,
+    },
+  });
 
   return data.results;
 };

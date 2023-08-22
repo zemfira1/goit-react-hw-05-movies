@@ -22,7 +22,7 @@ const Home = () => {
           return;
         }
         setMovies(prevState => [...prevState, ...r.results]);
-        setIsButton(currentPage < Math.ceil(r.total_results / 20));
+        setIsButton(currentPage < r.total_pages);
       })
       .catch(error => setError(error))
       .finally(() => setIsLoading(false));
