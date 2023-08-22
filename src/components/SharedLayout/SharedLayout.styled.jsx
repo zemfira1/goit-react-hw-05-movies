@@ -8,8 +8,8 @@ export const Container = styled.div`
 
 export const Header = styled.header`
   font-size: 34px;
-  color: #010101;
-  background-color: #f3f6af;
+  color: #fbf9f9;
+  background-color: #242323;
 `;
 
 export const Navigation = styled.nav`
