@@ -5,6 +5,7 @@ import woman from '../../../../images/woman.jpg';
 
 export const CastListItem = ({ name, character, profile_path, gender }) => {
   const BASE_URL = 'http://image.tmdb.org/t/p/w185/';
+  console.log(gender === 1);
 
   return (
     <Item>
